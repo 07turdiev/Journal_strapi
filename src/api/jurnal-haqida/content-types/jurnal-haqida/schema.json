@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "jurnal_haqidas",
+  "info": {
+    "singularName": "jurnal-haqida",
+    "pluralName": "jurnal-haqidas",
+    "displayName": "Jurnal haqida"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

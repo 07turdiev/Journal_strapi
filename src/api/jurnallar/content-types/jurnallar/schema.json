@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jurnallars",
+  "info": {
+    "singularName": "jurnallar",
+    "pluralName": "jurnallars",
+    "displayName": "Jurnallar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mavzu": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "mavzu"
+    },
+    "maqola_id": {
+      "type": "string",
+      "required": false
+    },
+    "pdf": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "viewa": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "Muallif": {
+      "type": "string",
+      "required": true
+    },
+    "sana": {
+      "type": "date",
+      "required": true
+    },
+    "Annotatsiya": {
+      "type": "text",
+      "required": true
+    },
+    "Kalit_suzlar": {
+      "type": "text",
+      "required": true
+    },
+    "son": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
