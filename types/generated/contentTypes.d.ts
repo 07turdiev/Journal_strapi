@@ -732,6 +732,44 @@ export interface ApiMaqolaYuborishMaqolaYuborish
   };
 }
 
+export interface ApiMualliflarUchunQollanmaMualliflarUchunQollanma
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mualliflar_uchun_qollanmas';
+  info: {
+    displayName: 'Mualliflar uchun qo\u2018llanma';
+    pluralName: 'mualliflar-uchun-qollanmas';
+    singularName: 'mualliflar-uchun-qollanma';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mualliflar-uchun-qollanma.mualliflar-uchun-qollanma'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMurojaatlarMurojaatlar extends Struct.CollectionTypeSchema {
   collectionName: 'murojaatlars';
   info: {
@@ -756,51 +794,6 @@ export interface ApiMurojaatlarMurojaatlar extends Struct.CollectionTypeSchema {
     Murojaat_matni: Schema.Attribute.Blocks;
     publishedAt: Schema.Attribute.DateTime;
     Telefon: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiQollanmaQollanma extends Struct.CollectionTypeSchema {
-  collectionName: 'qollanmas';
-  info: {
-    displayName: 'Mualliflar uchun qo\u2018llanma';
-    pluralName: 'qollanmas';
-    singularName: 'qollanma';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::qollanma.qollanma'
-    >;
-    Nomi: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    Text: Schema.Attribute.Blocks &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1641,8 +1634,8 @@ declare module '@strapi/strapi' {
       'api::jurnal-haqida.jurnal-haqida': ApiJurnalHaqidaJurnalHaqida;
       'api::jurnallar.jurnallar': ApiJurnallarJurnallar;
       'api::maqola-yuborish.maqola-yuborish': ApiMaqolaYuborishMaqolaYuborish;
+      'api::mualliflar-uchun-qollanma.mualliflar-uchun-qollanma': ApiMualliflarUchunQollanmaMualliflarUchunQollanma;
       'api::murojaatlar.murojaatlar': ApiMurojaatlarMurojaatlar;
-      'api::qollanma.qollanma': ApiQollanmaQollanma;
       'api::tadbirlar.tadbirlar': ApiTadbirlarTadbirlar;
       'api::tahrir-hayati.tahrir-hayati': ApiTahrirHayatiTahrirHayati;
       'api::tahririyat-xodimlari.tahririyat-xodimlari': ApiTahririyatXodimlariTahririyatXodimlari;
