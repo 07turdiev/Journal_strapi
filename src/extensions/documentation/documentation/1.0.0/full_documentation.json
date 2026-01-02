@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-01-02T10:23:09.481Z"
+    "x-generation-date": "2026-01-02T17:17:45.779Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -26,10 +26,6 @@
     {
       "url": "http://localhost:1337/api",
       "description": "Development server"
-    },
-    {
-      "url": "https://api.ziyoliavlod.com/api",
-      "description": "Production server"
     }
   ],
   "externalDocs": {
@@ -10281,6 +10277,9 @@
               "son": {
                 "type": "string"
               },
+              "google_scholar": {
+                "type": "string"
+              },
               "locale": {
                 "type": "string"
               },
@@ -10982,6 +10981,9 @@
           "son": {
             "type": "string"
           },
+          "google_scholar": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -11187,6 +11189,9 @@
                   "type": "string"
                 },
                 "son": {
+                  "type": "string"
+                },
+                "google_scholar": {
                   "type": "string"
                 },
                 "createdAt": {

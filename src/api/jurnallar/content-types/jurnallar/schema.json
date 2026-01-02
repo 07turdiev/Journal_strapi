@@ -53,6 +53,9 @@
     "son": {
       "type": "string",
       "required": true
+    },
+    "google_scholar": {
+      "type": "text"
     }
   }
 }
