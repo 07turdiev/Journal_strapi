@@ -673,6 +673,40 @@ export interface ApiJurnallarJurnallar extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLoyihalarLoyihalar extends Struct.CollectionTypeSchema {
+  collectionName: 'loyihalars';
+  info: {
+    displayName: 'Loyihalar';
+    pluralName: 'loyihalars';
+    singularName: 'loyihalar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::loyihalar.loyihalar'
+    > &
+      Schema.Attribute.Private;
+    nomi: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    rasmi: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    sana: Schema.Attribute.Date & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'nomi'> & Schema.Attribute.Required;
+    tavsif: Schema.Attribute.Text & Schema.Attribute.Required;
+    text: Schema.Attribute.RichText & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    yanalish: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ApiMaqolaYuborishMaqolaYuborish
   extends Struct.SingleTypeSchema {
   collectionName: 'maqola_yuborishs';
@@ -1634,6 +1668,7 @@ declare module '@strapi/strapi' {
       'api::hamkorlar.hamkorlar': ApiHamkorlarHamkorlar;
       'api::jurnal-haqida.jurnal-haqida': ApiJurnalHaqidaJurnalHaqida;
       'api::jurnallar.jurnallar': ApiJurnallarJurnallar;
+      'api::loyihalar.loyihalar': ApiLoyihalarLoyihalar;
       'api::maqola-yuborish.maqola-yuborish': ApiMaqolaYuborishMaqolaYuborish;
       'api::mualliflar-uchun-qollanma.mualliflar-uchun-qollanma': ApiMualliflarUchunQollanmaMualliflarUchunQollanma;
       'api::murojaatlar.murojaatlar': ApiMurojaatlarMurojaatlar;
